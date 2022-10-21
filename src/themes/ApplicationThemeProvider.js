@@ -67,6 +67,6 @@ const theme = createTheme({
         },
     },
 });
-export default function AppThemeProvider(prop) {
+export default function ApplicationThemeProvider(prop) {
     return <ThemeProvider theme={theme}>{prop.children}</ThemeProvider>;
 }
