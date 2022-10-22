@@ -9,7 +9,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { AiFillStar } from 'react-icons/ai';
 import { FaRegHeart } from 'react-icons/fa';
-//import { FcLike } from "react-icons/fc";
+import { FcLike } from "react-icons/fc";
 import {
     flexBetween,
     dFlex,
@@ -22,20 +22,20 @@ import './SwipeableCard.css';
 
 const SwipeableCard = ({ location }) => {
     const [activeStep, setActiveStep] = useState(0);
-    // const [like, setLike] = useState(false);
+    const [like, setLike] = useState(false);
 
-    const maxSteps = location.locationImages.length; // so that we know how many dots
+    const maxSteps = location.locationImages.length; 
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1); // jumps when we click the next arrow
+        setActiveStep((prevActiveStep) => prevActiveStep + 1); 
     };
 
     const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1); // when we click the back arrow
+        setActiveStep((prevActiveStep) => prevActiveStep - 1); 
     };
 
     const handleStepChange = (step) => {
-        setActiveStep(step); // handle swipe change
+        setActiveStep(step); 
     };
     return (
         <Box
@@ -44,8 +44,8 @@ const SwipeableCard = ({ location }) => {
                 flexGrow: 1,
                 position: 'relative',
             }}>
-            <Box sx={fixedIcon}>
-                <FaRegHeart size={24}  color="#fff" />
+            <Box sx={fixedIcon} onClick={() => setLike((prevLike) => !prevLike)}>
+                { like ? <FcLike size={24} /> : <FaRegHeart size={24}  color="#fff" />}
             </Box>
 
             {location.locationImages.length && (
