@@ -1,19 +1,15 @@
 /* eslint-disable */
-import React from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
-// mui icons
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-// 3rd party
 import SwipeableViews from 'react-swipeable-views';
-
-// react icons
 import { AiFillStar } from 'react-icons/ai';
 import { FaRegHeart } from 'react-icons/fa';
+//import { FcLike } from "react-icons/fc";
 import {
     flexBetween,
     dFlex,
@@ -21,11 +17,12 @@ import {
     fixedIcon,
     carouselImage,
     fixedBottom,
-} from 'themes/commonStyles';
-import './CarouselCard.css';
+} from '../../themes/CommonStyles';
+import './SwipeableCard.css';
 
 const SwipeableCard = ({ location }) => {
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = useState(0);
+    // const [like, setLike] = useState(false);
 
     const maxSteps = location.locationImages.length; // so that we know how many dots
 
@@ -48,7 +45,7 @@ const SwipeableCard = ({ location }) => {
                 position: 'relative',
             }}>
             <Box sx={fixedIcon}>
-                <FaRegHeart size={24} color="#fff" />
+                <FaRegHeart size={24}  color="#fff" />
             </Box>
 
             {location.locationImages.length && (
@@ -101,6 +98,7 @@ const SwipeableCard = ({ location }) => {
             <Box sx={flexBetween}>
                 <Box sx={{ mt: 2 }}>
                     <Typography component="h3"> {location.location}</Typography>
+                    <Typography component="h4"> Hosted By {location.host}</Typography>
                     <Typography component="h4"> {location.days}</Typography>
                     <Typography component="h5"> {location.price}</Typography>
                 </Box>
