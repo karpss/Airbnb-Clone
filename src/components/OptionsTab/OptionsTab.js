@@ -2,7 +2,7 @@
 import { Box, Container, Tabs, Tab, tabsClasses, Button } from '@mui/material';
 import { locationsBar } from '../../data/mockData'
 import React, { useState } from 'react';
-import { FaFilter } from 'react-icons/fa';
+import { AiOutlineBars } from 'react-icons/ai';
 
 const OptionsTab = () => {
     const [value, setValue] = useState(0);
@@ -45,7 +45,7 @@ const OptionsTab = () => {
                         py: 1,
                         color: 'theme.palatte.text.primary',
                     }}>
-                    <FaFilter /> Filters
+                    <AiOutlineBars /> Filters
                 </Button>
             </Box>
         </Container>
