@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { Box, Container, Tabs, Tab, tabsClasses, Button } from "@mui/material";
-import { AiOutlineBars } from "react-icons/ai";
+import { useState } from "react";
+import { FaFilter } from "react-icons/fa";
 import { locationsBar } from "../../data/mockData";
 
 function OptionsTab() {
   const [value, setValue] = useState(0);
-  const handleChange = (newValue) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   return (
@@ -47,7 +47,7 @@ function OptionsTab() {
             color: "theme.palatte.text.primary",
           }}
         >
-          <AiOutlineBars /> Filters
+          <FaFilter /> Filters
         </Button>
       </Box>
     </Container>
